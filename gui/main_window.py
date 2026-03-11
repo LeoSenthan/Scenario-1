@@ -10,17 +10,19 @@ class MainWindow:
         self.root = root
         self.root.title("MindfulDesk")
         self.root.geometry("800x600")
-        self.root.resizable(False, False)
+        self.root.resizable(False,False)
 
         self.container = tk.Frame(self.root)
         self.container.pack(fill="both", expand=True)
+        self.container.columnconfigure(0, weight=1) 
+        self.container.rowconfigure(0, weight=1)    
 
         self.frames = {}
 
         for F in (HomeScreen, HydrationScreen, MeditationScreen, TimerScreen ):
             frame = F(parent=self.container, controller=self)
             self.frames[F.__name__] = frame
-            frame.grid(row=0, column=0, sticky="nsew")
+            frame.grid(row=0,column=0,sticky="nsew");
 
         self.show_frame("HomeScreen")
 
