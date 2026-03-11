@@ -1,5 +1,5 @@
 def main():
-    print("Hello from scenario-1!")
+    print("Hello World, from scenario-1!")
 
 
 if __name__ == "__main__":
